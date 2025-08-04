@@ -57,3 +57,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
   
   # Verify npm version:
   npm -v # Should print "10.9.3".```
+
+- Install [daisyUI](https://daisyui.com/)
+
+  ```npm i -D daisyui@latest```
