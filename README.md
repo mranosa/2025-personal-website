@@ -34,3 +34,26 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+#### Ubuntu Setup
+- Install [Git](https://git-scm.com/)
+
+  ```sudo apt install git-all```
+
+- Install [Node](https://nodejs.org/en)
+
+  ```# Download and install nvm:
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+  
+  # in lieu of restarting the shell
+  \. "$HOME/.nvm/nvm.sh"
+  
+  # Download and install Node.js:
+  nvm install 22
+  
+  # Verify the Node.js version:
+  node -v # Should print "v22.18.0".
+  nvm current # Should print "v22.18.0".
+  
+  # Verify npm version:
+  npm -v # Should print "10.9.3".```
