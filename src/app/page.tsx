@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { useState } from 'react'
+import { Fragment, useState } from 'react'
 import { Dialog, DialogBackdrop, DialogPanel, TransitionChild } from '@headlessui/react'
 import {
   Bars3Icon,
@@ -13,7 +13,7 @@ import {
   UsersIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline'
-import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/20/solid'
+import { EnvelopeIcon, PhoneIcon, ChatBubbleLeftEllipsisIcon, TagIcon, UserCircleIcon } from '@heroicons/react/20/solid'
 import imageProfileMe from '@/images/profile/me.png'
 
 const navigation = [
@@ -23,6 +23,29 @@ const navigation = [
   { name: 'Calendar', href: '#', icon: CalendarIcon, current: false },
   { name: 'Documents', href: '#', icon: DocumentDuplicateIcon, current: false },
   { name: 'Reports', href: '#', icon: ChartPieIcon, current: false },
+]
+
+const testimonials = [
+  {
+    id: 1,
+    person: { name: 'Eduardo Benz', href: '#' },
+    imageUrl:
+        'https://images.unsplash.com/photo-1520785643438-5bf77931f493?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80',
+    comment:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tincidunt nunc ipsum tempor purus vitae id. Morbi in vestibulum nec varius. Et diam cursus quis sed purus nam.',
+    position: 'Software Engineer',
+    company: 'Newsela',
+  },
+  {
+    id: 4,
+    person: { name: 'Jason Meyers', href: '#' },
+    imageUrl:
+        'https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80',
+    comment:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tincidunt nunc ipsum tempor purus vitae id. Morbi in vestibulum nec varius. Et diam cursus quis sed purus nam. Scelerisque amet elit non sit ut tincidunt condimentum. Nisl ultrices eu venenatis diam.',
+    position: 'Software Engineer',
+    company: 'Newsela',
+  },
 ]
 
 const person = {
@@ -200,7 +223,7 @@ export default function Example() {
               </div>
 
               {/*Second Section*/}
-              <div className="w-64 flex-auto  border-amber-300 border-2">
+              <div className="flex-auto  border-amber-300 border-2">
 
                 {/*Experience*/}
                 <div className="overflow-hidden rounded-lg bg-white px-4 py-5 shadow-sm m-6">
@@ -224,15 +247,58 @@ export default function Example() {
 
 
               {/*Third Section*/}
-              <div className="w-32 flex-auto border-b-base-200 border-2">
+              <div className="flex-auto border-b-base-200 border-2">
+
+
 
                 {/*Testimonials*/}
-                <div className="overflow-hidden rounded-lg bg-white px-4 py-5 shadow-sm m-6">
+                <div className="overflow-hidden rounded-lg bg-white px-4 py-5 shadow-sm m-6 max-w-128">
                   <div className="border-b border-gray-200 pb-5">
                     <h3 className="text-base font-semibold text-gray-900">Testimonials</h3>
                   </div>
 
-                  <div className="truncate text-sm font-medium text-gray-500">yo</div>
+                  <div className="flow-root mt-8">
+                    
+
+                    
+                    <ul role="list" className="-mb-8">
+                      {testimonials.map((testimonial, testimonialIdx) => (
+                          <li key={testimonial.id}>
+                            <div className="relative pb-8">
+                              {/*{testimonialIdx !== testimonials.length - 1 ? (*/}
+                              {/*    <span aria-hidden="true" className="absolute top-5 left-5 -ml-px h-full w-0.5 bg-gray-200" />*/}
+                              {/*) : null}*/}
+                              <div className="relative flex items-start space-x-3">
+                                <>
+                                  <div className="relative">
+                                    <img
+                                        alt=""
+                                        src={testimonial.imageUrl}
+                                        className="flex size-10 items-center justify-center rounded-full bg-gray-400 ring-8 ring-white outline -outline-offset-1 outline-black/5"
+                                    />
+                                  </div>
+                                  <div className="min-w-0 flex-1">
+                                    <div>
+                                      <div className="text-sm">
+                                        <a href={testimonial.person.href} className="font-medium text-gray-900">
+                                          {testimonial.person.name}
+                                        </a>
+                                      </div>
+                                      <p className="mt-0.5 text-sm text-gray-500">{testimonial.position} at {testimonial.company}</p>
+                                    </div>
+                                    <div className="mt-2 text-sm text-gray-700">
+                                      <p>{testimonial.comment}</p>
+                                    </div>
+                                  </div>
+                                </>
+                              </div>
+                            </div>
+                          </li>
+                      ))}
+                    </ul>
+                  
+                  </div>
+                  
                 </div>
 
               </div>
