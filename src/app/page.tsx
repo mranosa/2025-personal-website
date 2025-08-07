@@ -136,6 +136,8 @@ export default function Example() {
 
           <main className="lg:pl-20 bg-gray-100">
             <div className="flex flex-col md:flex-row ">
+
+              {/*First Section*/}
               <div className="flex-auto border-orange-400 border-2">
 
                 <div className="flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow-sm m-2 max-w-96">
@@ -165,7 +167,7 @@ export default function Example() {
                       <div className="flex w-0 flex-1">
                         <a
                             href={`mailto:${person.email}`}
-                            className="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-sm font-semibold text-gray-900"
+                            className="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-sm font-semibold text-gray-900 hover:bg-gray-50"
                         >
                           <EnvelopeIcon aria-hidden="true" className="size-5 text-gray-400" />
                           Email
@@ -174,7 +176,7 @@ export default function Example() {
                       <div className="-ml-px flex w-0 flex-1">
                         <a
                             href={`tel:${person.telephone}`}
-                            className="relative inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-br-lg border border-transparent py-4 text-sm font-semibold text-gray-900"
+                            className="relative inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-br-lg border border-transparent py-4 text-sm font-semibold text-gray-900 hover:bg-gray-50"
                         >
                           <PhoneIcon aria-hidden="true" className="size-5 text-gray-400" />
                           Call
@@ -184,10 +186,57 @@ export default function Example() {
                   </div>
                 </div>
 
+
+
+                {/*Technologies*/}
+                <div className="overflow-hidden rounded-lg bg-white px-4 py-5 shadow-sm m-6">
+                  <div className="border-b border-gray-200 pb-5">
+                    <h3 className="text-base font-semibold text-gray-900">Technologies</h3>
+                  </div>
+
+                  <div className="truncate text-sm font-medium text-gray-500">yo</div>
+                </div>
+
               </div>
 
-              <div className="w-64 flex-auto  border-amber-300 border-2">02</div>
-              <div className="w-32 flex-auto border-b-base-200 border-2">03</div>
+              {/*Second Section*/}
+              <div className="w-64 flex-auto  border-amber-300 border-2">
+
+                {/*Experience*/}
+                <div className="overflow-hidden rounded-lg bg-white px-4 py-5 shadow-sm m-6">
+                  <div className="border-b border-gray-200 pb-5">
+                    <h3 className="text-base font-semibold text-gray-900">Experience</h3>
+                  </div>
+
+                  <div className="truncate text-sm font-medium text-gray-500">yo</div>
+                </div>
+
+                {/*Projects*/}
+                <div className="overflow-hidden rounded-lg bg-white px-4 py-5 shadow-sm m-6">
+                  <div className="border-b border-gray-200 pb-5">
+                    <h3 className="text-base font-semibold text-gray-900">Projects</h3>
+                  </div>
+
+                  <div className="truncate text-sm font-medium text-gray-500">yo</div>
+                </div>
+
+              </div>
+
+
+              {/*Third Section*/}
+              <div className="w-32 flex-auto border-b-base-200 border-2">
+
+                {/*Testimonials*/}
+                <div className="overflow-hidden rounded-lg bg-white px-4 py-5 shadow-sm m-6">
+                  <div className="border-b border-gray-200 pb-5">
+                    <h3 className="text-base font-semibold text-gray-900">Testimonials</h3>
+                  </div>
+
+                  <div className="truncate text-sm font-medium text-gray-500">yo</div>
+                </div>
+
+              </div>
+
             </div>
           </main>
 
