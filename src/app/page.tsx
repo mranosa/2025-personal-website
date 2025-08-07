@@ -30,7 +30,7 @@ const testimonials = [
     id: 1,
     person: { name: 'Eduardo Benz', href: '#' },
     imageUrl:
-        'https://images.unsplash.com/photo-1520785643438-5bf77931f493?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80',
+        'https://media.licdn.com/dms/image/v2/D560BAQGdwOyAxh0__Q/company-logo_100_100/B56ZedtayCHQAQ-/0/1750697618876/goformative_logo?e=1757548800&v=beta&t=9u1NX6Svhq6bfNbQPYRiiItfWlp5w4bHmtr4OEjzK9k',
     comment:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tincidunt nunc ipsum tempor purus vitae id. Morbi in vestibulum nec varius. Et diam cursus quis sed purus nam.',
     position: 'Software Engineer',
@@ -45,6 +45,27 @@ const testimonials = [
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tincidunt nunc ipsum tempor purus vitae id. Morbi in vestibulum nec varius. Et diam cursus quis sed purus nam. Scelerisque amet elit non sit ut tincidunt condimentum. Nisl ultrices eu venenatis diam.',
     position: 'Software Engineer',
     company: 'Newsela',
+  },
+]
+
+const companies = [
+  {
+    id: 1,
+    imageUrl:
+        'https://media.licdn.com/dms/image/v2/D560BAQGdwOyAxh0__Q/company-logo_100_100/B56ZedtayCHQAQ-/0/1750697618876/goformative_logo?e=1757548800&v=beta&t=9u1NX6Svhq6bfNbQPYRiiItfWlp5w4bHmtr4OEjzK9k',
+    position: 'Software Engineer',
+    name: 'Newsela',
+    duration: 'Feb 2021 - Jun 2025 · 4 yrs 5 mos',
+    isRemote: true,
+  },
+  {
+    id: 2,
+    imageUrl:
+        'https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80',
+    position: 'Software Engineer',
+    name: 'Newsela',
+    duration: 'Feb 2021 - Jun 2025 · 4 yrs 5 mos',
+    isRemote: true,
   },
 ]
 
@@ -231,7 +252,49 @@ export default function Example() {
                     <h3 className="text-base font-semibold text-gray-900">Experience</h3>
                   </div>
 
-                  <div className="truncate text-sm font-medium text-gray-500">yo</div>
+                  <div className="flow-root mt-8">
+
+                    <ul role="list" className="-mb-8">
+                      {companies.map((company, companyIdx) => (
+                          <li key={companyIdx}>
+                            <div className="relative pb-8">
+                              {companyIdx !== companies.length - 1 ? (
+                                  <span aria-hidden="true" className="absolute top-5 left-5 -ml-px h-full w-0.5 bg-gray-200" />
+                              ) : null}
+                              <div className="relative flex items-start space-x-3">
+                                <>
+                                  <div className="relative">
+                                    <img
+                                        alt=""
+                                        src={company.imageUrl}
+                                        className="flex size-10 items-center justify-center rounded-md bg-gray-400 ring-8 ring-white outline -outline-offset-1 outline-black/5"
+                                    />
+                                    {/*<img*/}
+                                    {/*    alt=""*/}
+                                    {/*    src={company.imageUrl}*/}
+                                    {/*    className="size-14 rounded-md outline -outline-offset-1 outline-black/5"*/}
+                                    {/*/>*/}
+                                  </div>
+                                  <div className="min-w-0 flex-1">
+                                    <div>
+                                      <div className="text-sm">
+                                        {company.name}
+                                      </div>
+                                      <p className="mt-0.5 text-sm text-gray-700">{company.position}</p>
+                                      <p className="mt-0.5 text-sm text-gray-500">{company.duration}</p>
+
+                                      <p></p>
+                                    </div>
+                                  </div>
+                                </>
+                              </div>
+                            </div>
+                          </li>
+                      ))}
+                    </ul>
+
+                  </div>
+
                 </div>
 
                 {/*Projects*/}
@@ -258,9 +321,7 @@ export default function Example() {
                   </div>
 
                   <div className="flow-root mt-8">
-                    
 
-                    
                     <ul role="list" className="-mb-8">
                       {testimonials.map((testimonial, testimonialIdx) => (
                           <li key={testimonial.id}>
@@ -274,7 +335,7 @@ export default function Example() {
                                     <img
                                         alt=""
                                         src={testimonial.imageUrl}
-                                        className="flex size-10 items-center justify-center rounded-full bg-gray-400 ring-8 ring-white outline -outline-offset-1 outline-black/5"
+                                        className="flex size-14 items-center justify-center rounded-full bg-gray-400 ring-8 ring-white outline -outline-offset-1 outline-black/5"
                                     />
                                   </div>
                                   <div className="min-w-0 flex-1">
